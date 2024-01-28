@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const app = require('./app');
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
 
-dotenv.config({ path: './config.env' });
+const app = require("./app");
 
 const DB = process.env.DATABASE.replace(
-  '<PASSWORD>',
+  "<PASSWORD>",
   process.env.DATABASE_PASSWORD
 );
 
@@ -17,7 +17,7 @@ mongoose
     useFindAndModify: false,
     useUnifiedTopology: true,
   })
-  .then((con) => console.log('DB Connection Successful!'));
+  .then((con) => console.log("DB Connection Successful!"));
 
 // console.log(process.env);
 
